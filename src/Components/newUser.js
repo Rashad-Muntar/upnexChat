@@ -37,7 +37,8 @@ export default function NewUser() {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(setUsername({username: user}))
+    dispatch(setUsername({ username: user }));
+    handleClose();
   };
 
   return (
@@ -57,6 +58,7 @@ export default function NewUser() {
           <Box sx={style}>
             <form onSubmit={submitHandler}>
               <TextField
+                value={user}
                 id="filled-basic"
                 label="Filled"
                 variant="filled"
